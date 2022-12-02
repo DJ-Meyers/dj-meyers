@@ -16,7 +16,7 @@ export default function Home() {
           <div className='basis-1/2 flex flex-col pt-10 pl-2'>
             <a target='_blank' rel='noreferrer' href='https://cfbguessr.com' className='text-xl leading-6 mb-2 text-slate-300 hover:text-white'>CFBGuessr</a>
             <a target='_blank' rel='noreferrer' href='https://dj-meyers.github.io/gloomhaven-modifier-calculator/' className='text-xl leading-6 mb-2 text-slate-300 hover:text-white'>Gloomhaven Calculator</a>
-            <a target='_blank' rel='noreferrer' href='https://drive.google.com/file/d/1sOngxmaPQq3RplNOO2isNdJtQ4A9i1Pk/view?usp=sharing' className='text-xl leading-6 mb-2 text-slate-300 hover:text-white'>Resume</a>
+            <a target='_blank' rel='noreferrer' href='https://docs.google.com/document/d/e/2PACX-1vS0tqRT2zvzhRV5z4kArwAhIxc4SSp9XsunDIzw3e52HRTShvsTgigGWZvY8NL1q7HKrEa28h730oTP/pub' className='text-xl leading-6 mb-2 text-slate-300 hover:text-white'>Resume</a>
             <a target='_blank' rel='noreferrer' href='https://github.com/dj-meyers' className='text-xl leading-6 mb-2 text-slate-300 hover:text-white'>Github</a>
             <a target='_blank' rel='noreferrer' href='https://www.linkedin.com/in/dj-meyers/' className='text-xl leading-6 mb-2 text-slate-300 hover:text-white'>LinkedIn</a>
             </div>
