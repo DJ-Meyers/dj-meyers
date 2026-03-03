@@ -25,6 +25,13 @@ export default function BlogIndex({
       </Head>
 
       <main className="max-w-2xl mx-auto px-4 py-12 md:py-24">
+        <Link
+          href="/"
+          className="text-sm text-text-muted hover:text-text mb-8 inline-block"
+        >
+          &larr; Home
+        </Link>
+
         <h1 className="text-3xl font-bold text-text mb-8">Blog</h1>
 
         {posts.length === 0 ? (
