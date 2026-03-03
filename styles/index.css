@@ -1,7 +1,9 @@
 @import "tailwindcss";
 @import "@dj-meyers/theme/theme.css";
+@plugin "@tailwindcss/typography";
 
 @source "../pages";
+@source "../components";
 
 @layer base {
   a {
