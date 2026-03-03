@@ -17,6 +17,7 @@ export default function Home() {
             <h1 className='text-3xl font-bolder text-right text-text'>DJ Meyers</h1>
           </div>
           <div className='basis-1/2 flex flex-col pt-10 pl-2'>
+            <a href='/blog' className='text-xl leading-6 mb-2 text-text-muted hover:text-text'>Blog</a>
             <a href='/poke/dex' className='text-xl leading-6 mb-2 text-text-muted hover:text-text'>Living Dex Tracker</a>
             <a target='_blank' rel='noreferrer' href='https://drive.google.com/file/d/14oelwmrGSAF1ZV0IZh9eCDa7x7X9_zXC/view' className='text-xl leading-6 mb-2 text-text-muted hover:text-text'>Resume</a>
             <a target='_blank' rel='noreferrer' href='https://www.linkedin.com/in/dj-meyers/' className='text-xl leading-6 mb-2 text-text-muted hover:text-text'>LinkedIn</a>
