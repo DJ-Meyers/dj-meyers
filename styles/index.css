@@ -6,6 +6,10 @@
 @source "../components";
 
 @layer base {
+  body {
+    font-family: "Outfit", sans-serif;
+  }
+
   a {
     color: inherit;
     text-decoration: none;

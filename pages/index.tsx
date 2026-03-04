@@ -5,16 +5,12 @@ export default function Home() {
     <div className='w-full h-screen bg-bg'>
       <Head>
         <title>DJ Meyers</title>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
       </Head>
 
       <main className='h-full flex flex-col justify-between'>
         <div className='flex justify-center items-start w-auto mx-auto mb-auto mt-12 md:mt-36'>
           <div className='basis-1/2 pr-2'>
-            <h1 className='text-3xl font-bolder text-right text-text'>DJ Meyers</h1>
+            <h1 className='text-3xl text-right text-text'>DJ Meyers</h1>
           </div>
           <div className='basis-1/2 flex flex-col pt-10 pl-2'>
             <a href='/blog' className='text-xl leading-6 mb-2 text-text-muted hover:text-text'>Blog</a>

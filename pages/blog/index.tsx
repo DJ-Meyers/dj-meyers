@@ -24,15 +24,11 @@ export default function BlogIndex({
         <title>Blog - DJ Meyers</title>
       </Head>
 
-      <main className="max-w-2xl mx-auto px-4 py-12 md:py-24">
-        <Link
-          href="/"
-          className="text-sm text-text-muted hover:text-text mb-8 inline-block"
-        >
+      <main className="max-w-2xl mx-auto px-4 pt-8 md:pt-16">
+        <Link href="/" className="text-sm text-text-muted hover:text-text">
           &larr; Home
         </Link>
-
-        <h1 className="text-3xl font-bold text-text mb-8">Blog</h1>
+        <h1 className="text-3xl text-text mt-2 mb-4">Blog</h1>
 
         {posts.length === 0 ? (
           <p className="text-text-muted">No posts yet.</p>

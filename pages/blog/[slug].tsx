@@ -34,17 +34,13 @@ export default function BlogPost({
         )}
       </Head>
 
-      <main className="max-w-2xl mx-auto px-4 py-12 md:py-24">
-        <Link
-          href="/blog"
-          className="text-sm text-text-muted hover:text-text mb-8 inline-block"
-        >
-          &larr; Back to blog
+      <main className="max-w-2xl mx-auto px-4 pt-8 md:pt-16">
+        <Link href="/blog" className="text-sm text-text-muted hover:text-text">
+          &larr; Blog
         </Link>
-
-        <article>
-          <header className="mb-8">
-            <h1 className="text-3xl font-bold text-text">{post.title}</h1>
+        <article className="mt-2">
+          <header className="mb-4">
+            <h1 className="text-3xl text-text">{post.title}</h1>
             <div className="text-sm text-text-muted mt-2">
               <time dateTime={post.date}>
                 {new Date(post.date).toLocaleDateString("en-US", {
