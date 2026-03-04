@@ -53,7 +53,7 @@ export default function BlogIndex({
                   <span>{post.metadata.readingTime} min read</span>
                 </div>
                 {post.description && (
-                  <p className="text-text-muted mt-2">{post.description}</p>
+                  <p className="text-text mt-2">{post.description}</p>
                 )}
               </li>
             ))}
