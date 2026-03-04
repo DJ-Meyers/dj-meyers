@@ -11,6 +11,7 @@
   "dependencies": {
     "@dj-meyers/theme": "^1.0.0",
     "@tailwindcss/postcss": "^4.1.18",
+    "@tailwindcss/typography": "^0.5.19",
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.9",
@@ -21,5 +22,16 @@
     "react-dom": "18.2.0",
     "tailwindcss": "^4.1.18",
     "typescript": "4.8.4"
+  },
+  "devDependencies": {
+    "rehype-pretty-code": "^0.14.3",
+    "shiki": "^4.0.1",
+    "velite": "^0.3.1"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp"
+    ]
   }
 }
