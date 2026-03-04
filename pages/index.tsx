@@ -18,7 +18,7 @@ export default function Home({ hasPosts }: InferGetStaticPropsType<typeof getSta
       <main className='h-full flex flex-col justify-between'>
         <div className='flex justify-center items-start w-auto mx-auto mb-auto mt-12 md:mt-36'>
           <div className='basis-1/2 pr-2'>
-            <h1 className='text-3xl text-right text-text'>DJ Meyers</h1>
+            <h1 className='text-3xl text-right text-text whitespace-nowrap'>DJ Meyers</h1>
           </div>
           <div className='basis-1/2 flex flex-col pt-10 pl-2'>
             {hasPosts && <Link href='/blog' className='text-xl leading-6 mb-2 text-text-muted hover:text-text'>Blog</Link>}
