@@ -54,7 +54,7 @@ export default function BlogPost({
             </div>
             {post.tags.length > 0 && (
               <div className="flex gap-2 mt-3">
-                {post.tags.map((tag) => (
+                {post.tags.map((tag: string) => (
                   <span
                     key={tag}
                     className="text-xs px-2 py-1 bg-bg text-text-muted border border-text-muted/20 rounded"
