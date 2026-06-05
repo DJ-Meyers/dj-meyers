@@ -32,7 +32,7 @@ export default function Home({ hasPosts }: InferGetStaticPropsType<typeof getSta
 
           <h2 className='text-sm uppercase tracking-wide leading-6 text-right text-text-muted/70'>Boring Stuff</h2>
           <div className='flex flex-col'>
-            <a target='_blank' rel='noreferrer' href='https://drive.google.com/file/d/14oelwmrGSAF1ZV0IZh9eCDa7x7X9_zXC/view' className='text-xl leading-6 mb-2 text-text-muted hover:text-text'>Resume</a>
+            <a target='_blank' rel='noreferrer' href='/resume.pdf' className='text-xl leading-6 mb-2 text-text-muted hover:text-text'>Resume</a>
             <a target='_blank' rel='noreferrer' href='https://www.linkedin.com/in/dj-meyers/' className='text-xl leading-6 mb-2 text-text-muted hover:text-text'>LinkedIn</a>
             <a target='_blank' rel='noreferrer' href='https://github.com/dj-meyers' className='text-xl leading-6 text-text-muted hover:text-text'>Github</a>
           </div>
