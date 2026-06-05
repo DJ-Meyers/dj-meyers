@@ -1,3 +1,5 @@
+import fs from "node:fs";
+import path from "node:path";
 import rehypePrettyCode from "rehype-pretty-code";
 import { defineCollection, defineConfig, s } from "velite";
 
@@ -31,5 +33,16 @@ export default defineConfig({
     rehypePlugins: [
       [rehypePrettyCode, { theme: "github-dark" }],
     ],
+  },
+  // Next.js 13's SWC can't parse the `with { type: 'json' }` import attribute
+  // that velite emits in its generated index. Strip it after every build so
+  // dev-mode watch rebuilds don't re-introduce the syntax error.
+  complete: () => {
+    const indexPath = path.resolve(process.cwd(), ".velite/index.js");
+    const content = fs.readFileSync(indexPath, "utf8");
+    fs.writeFileSync(
+      indexPath,
+      content.replace(/ with \{ type: 'json' \}/g, "")
+    );
   },
 });

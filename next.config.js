@@ -1,6 +1,3 @@
-const fs = require('fs');
-const path = require('path');
-
 class VeliteWebpackPlugin {
   static started = false;
   apply(/** @type {import('webpack').Compiler} */ compiler) {
@@ -9,11 +6,9 @@ class VeliteWebpackPlugin {
       VeliteWebpackPlugin.started = true;
       const dev = compiler.options.mode === 'development';
       const { build } = await import('velite');
+      // velite's `complete` hook strips the `with { type: 'json' }` import
+      // attribute that Next 13's SWC can't parse (see velite.config.ts).
       await build({ watch: dev, clean: !dev });
-      // Rewrite velite output to remove `with { type: 'json' }` (unsupported by Next.js 13 SWC)
-      const indexPath = path.resolve(__dirname, '.velite/index.js');
-      const content = fs.readFileSync(indexPath, 'utf8');
-      fs.writeFileSync(indexPath, content.replace(/ with \{ type: 'json' \}/g, ''));
     });
   }
 }
@@ -22,22 +17,19 @@ class VeliteWebpackPlugin {
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  // Static export for GitHub Pages. Next 13.0.3 predates `output: 'export'`,
+  // so the build runs `next export` (see the `build` script) to emit `out/`.
+  // Pages has no image optimization server, so serve images as-is.
+  images: { unoptimized: true },
+  // Pretty URLs (`/blog/post/`) instead of `/blog/post.html` on static hosts.
+  trailingSlash: true,
   webpack(config) {
     config.plugins.push(new VeliteWebpackPlugin());
     return config;
   },
-  async rewrites() {
-    return [
-      {
-        source: '/poke',
-        destination: 'https://dj-meyers.github.io/poke/',
-      },
-      {
-        source: '/poke/:path*',
-        destination: 'https://dj-meyers.github.io/poke/:path*',
-      },
-    ];
-  },
+  // NOTE: the previous `/poke` rewrite proxied to dj-meyers.github.io/poke.
+  // Rewrites/proxies don't exist on static GitHub Pages — `/poke` is now a
+  // client-side redirect stub at `public/poke/index.html` instead.
 }
 
 module.exports = nextConfig
