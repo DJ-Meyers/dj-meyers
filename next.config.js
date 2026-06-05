@@ -1,6 +1,3 @@
-const fs = require('fs');
-const path = require('path');
-
 class VeliteWebpackPlugin {
   static started = false;
   apply(/** @type {import('webpack').Compiler} */ compiler) {
@@ -9,11 +6,9 @@ class VeliteWebpackPlugin {
       VeliteWebpackPlugin.started = true;
       const dev = compiler.options.mode === 'development';
       const { build } = await import('velite');
+      // velite's `complete` hook strips the `with { type: 'json' }` import
+      // attribute that Next 13's SWC can't parse (see velite.config.ts).
       await build({ watch: dev, clean: !dev });
-      // Rewrite velite output to remove `with { type: 'json' }` (unsupported by Next.js 13 SWC)
-      const indexPath = path.resolve(__dirname, '.velite/index.js');
-      const content = fs.readFileSync(indexPath, 'utf8');
-      fs.writeFileSync(indexPath, content.replace(/ with \{ type: 'json' \}/g, ''));
     });
   }
 }
